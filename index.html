@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protect your vision</title>
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--https://dev.to/akhilarjun/css-art-let-s-create-a-cute-robot-part-1-3ng5-->
+</head>
+
+<body>
+    <div class="header">
+        <h1>Protect your vision</h1>
+        <h4>take break after:</h4>
+        <div class="header-time">
+            <span>20 minutes - </span>
+            <span>40 minutes - </span>
+            <span>60 minutes</span>
+        </div>
+    </div>
+
+    <div class="cute-robot">
+        <div class="circle-bg">
+            <div class="robot-ear left"></div>
+            <div class="robot-head">
+                <div class="robot-face">
+                    <div class="eyes left"></div>
+                    <div class="eyes right"></div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <div class="robot-ear right"></div>
+            <div class="robot-body"></div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="btn button-one">20 minutes</button>
+        <button class="btn button-two">40 minutes</button>
+        <button class="btn button-three">60 minutes</button>
+        <ul class="nav">
+            <audio id="music" src="./audio/chill.mp3" class="my-audio" loop="loop" preload="auto"></audio>
+        </ul>
+    </div>
+    <div>
+        <input type="checkbox" id="toggle" class="toggle-checkbox" />
+        <label for="toggle" class="toggle-label">
+        <span class="toggle-label-background"></span>
+      </label>
+        <div class="background"></div>
+    </div>
+</body>
+<script>
+    var musicOne = $('#music')[0];
+    $('.nav').mouseenter(function() {
+        musicOne.play();
+    });
+</script>
+<script src="script.js"></script>
+
+</html>
