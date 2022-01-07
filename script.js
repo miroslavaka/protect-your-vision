@@ -20,25 +20,29 @@ function togglePlay() {
 }
 
 //play after 40 minutes
-function playMusicBtnOne() {
+btnTwo.addEventListener('click', togglePlay);
+
+function playMusicBtnTwo() {
     setTimeout(function() {
         myAudio.play();
     }, 24000000);
 }
 
 function togglePlay() {
-    isPlaying === true ? myAudio.pause() : playMusicBtnOne();
+    isPlaying === true ? myAudio.pause() : playMusicBtnTwo();
 }
 
 //play after 60 minutes
-function playMusicBtnOne() {
+btnThree.addEventListener('click', togglePlay);
+
+function playMusicBtnThree() {
     setTimeout(function() {
         myAudio.play();
     }, 36000000);
 }
 
 function togglePlay() {
-    isPlaying === true ? myAudio.pause() : playMusicBtnOne();
+    isPlaying === true ? myAudio.pause() : playMusicBtnThree();
 }
 
 //---------------------------------------------------------
