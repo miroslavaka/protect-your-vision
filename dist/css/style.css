@@ -160,19 +160,17 @@ html {
             right: 42rem;
         }
     } */
-}
-
-.circle-bg .robot-body {
-  height: 2rem;
-  width: 6rem;
-  border: 0.1rem solid #195272;
-  background: #fff;
-  position: absolute;
-  bottom: 19.5rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border-radius: 1rem 1rem 1.3rem 1.3rem;
+  /*  .robot-body {
+        height: 2rem;
+        width: 6rem;
+        border: 0.1rem solid $outline-color;
+        background: $background;
+        position: absolute;
+        bottom: 19.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 1rem 1rem 1.3rem 1.3rem;
+    } */
 }
 
 .buttons {
