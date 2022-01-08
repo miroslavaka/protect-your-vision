@@ -6,13 +6,20 @@ let btnThree = document.querySelector('.button-three');
 let myAudio = document.querySelector('.my-audio');
 let isPlaying = false;
 
-btnOne.addEventListener('click', togglePlay);
+myAudio.onplaying = function() {
+    isPlaying = true;
+};
+myAudio.onpause = function() {
+    isPlaying = false;
+};
 
 //play after 20 minutes
+btnOne.addEventListener('click', togglePlay);
+
 function playMusicBtnOne() {
     setTimeout(function() {
         myAudio.play();
-    }, 12000000);
+    }, 1200000);
 }
 
 function togglePlay() {
@@ -25,7 +32,7 @@ btnTwo.addEventListener('click', togglePlay);
 function playMusicBtnTwo() {
     setTimeout(function() {
         myAudio.play();
-    }, 24000000);
+    }, 2400000);
 }
 
 function togglePlay() {
@@ -38,17 +45,9 @@ btnThree.addEventListener('click', togglePlay);
 function playMusicBtnThree() {
     setTimeout(function() {
         myAudio.play();
-    }, 36000000);
+    }, 3600000);
 }
 
 function togglePlay() {
     isPlaying === true ? myAudio.pause() : playMusicBtnThree();
 }
-
-//---------------------------------------------------------
-myAudio.onplaying = function() {
-    isPlaying = true;
-};
-myAudio.onpause = function() {
-    isPlaying = false;
-};
