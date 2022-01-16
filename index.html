@@ -7,20 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Protect your vision</title>
     <link rel="stylesheet" href="./dist/css/style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <!--https://dev.to/akhilarjun/css-art-let-s-create-a-cute-robot-part-1-3ng5-->
+
+    <!--COVERTING MILISECONDS TO MINUTES IN JS:
+    https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+
+    https://pretagteam.com/question/convert-milliseconds-to-minutes-and-seconds-javascript
+
+    POMODORO TIMER:
+    https://codepen.io/Airster/pen/aveYBE
+    https://codepen.io/chris__sev/pen/zbnhm
+    https://codepen.io/cynthiaLixinLee/pen/xWzdRK
+    https://codepen.io/calebcox/pen/vZrqjZ
+    https://codepen.io/chrisgrabinski/pen/lnrwi
+    -->
 </head>
 
 <body>
     <div class="header">
-        <h1>Protect your vision</h1>
-        <h4>take break after:</h4>
+
         <div class="header-time">
+            <h1>Protect your vision</h1>
+            <h4>take break after:</h4>
             <span>20 minutes - </span>
             <span>40 minutes - </span>
             <span>60 minutes</span>
         </div>
+        <div class="bg-images">
+            <a onclick="changeBackgroundImage('../images/space.jpg');"> Cosmos </a>
+            <a onclick="changeBackgroundImage('../images/tree.jpg');">Tree</a>
+            <a onclick="changeBackgroundImage('../images/beach.jpg');">Beach</a>
+            <an onclick="changeBackgroundImage('../images/owl.jpg');">Animal</a>
+        </div>
     </div>
+
 
     <div class="cute-robot">
         <div class="circle-bg">
@@ -36,6 +57,9 @@
             <div class="robot-body"></div>
         </div>
     </div>
+    <div class="timer">
+        <p class="countdown">1:00</p>
+    </div>
     <div class="buttons">
         <button class="btn button-one">20 minutes</button>
         <button class="btn button-two">40 minutes</button>
@@ -44,19 +68,20 @@
             <audio id="music" src="./audio/chill.mp3" class="my-audio" loop="loop" preload="auto"></audio>
         </ul>
     </div>
-    <div>
+
+    <!--   <div>
         <input type="checkbox" id="toggle" class="toggle-checkbox" />
         <label for="toggle" class="toggle-label">
         <span class="toggle-label-background"></span>
       </label>
         <div class="background"></div>
-    </div>
+    </div> -->
 </body>
 <script>
-    var musicOne = $('#music')[0];
-    $('.nav').mouseenter(function() {
-        musicOne.play();
-    });
+    /*  var musicOne = $('#music')[0];
+                                $('.nav').mouseenter(function() {
+                                    musicOne.play();
+                                }); */
 </script>
 <script src="script.js"></script>
 
