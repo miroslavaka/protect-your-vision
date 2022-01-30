@@ -7,82 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Protect your vision</title>
     <link rel="stylesheet" href="./dist/css/style.css" />
-
-    <!--https://dev.to/akhilarjun/css-art-let-s-create-a-cute-robot-part-1-3ng5-->
-
-    <!--COVERTING MILISECONDS TO MINUTES IN JS:
-    https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
-
-    https://pretagteam.com/question/convert-milliseconds-to-minutes-and-seconds-javascript
-
-    POMODORO TIMER:
-    https://codepen.io/Airster/pen/aveYBE
-    https://codepen.io/chris__sev/pen/zbnhm
-    https://codepen.io/cynthiaLixinLee/pen/xWzdRK
-    https://codepen.io/calebcox/pen/vZrqjZ
-    https://codepen.io/chrisgrabinski/pen/lnrwi
-    -->
 </head>
 
 <body>
-    <div class="header">
-
-        <div class="header-time">
-            <h1>Protect your vision</h1>
-            <h4>take break after:</h4>
+    <div class="container">
+        <div class="header">
+            <div class="header-time">
+                <h1>Protect your vision</h1>
+                <!--  <h4>take break after:</h4>
             <span>20 minutes - </span>
             <span>40 minutes - </span>
-            <span>60 minutes</span>
-        </div>
-        <div class="bg-images">
-            <a onclick="changeBackgroundImage('../images/space.jpg');"> Cosmos </a>
-            <a onclick="changeBackgroundImage('../images/tree.jpg');">Tree</a>
-            <a onclick="changeBackgroundImage('../images/beach.jpg');">Beach</a>
-            <an onclick="changeBackgroundImage('../images/owl.jpg');">Animal</a>
-        </div>
-    </div>
-
-
-    <div class="cute-robot">
-        <div class="circle-bg">
-            <div class="robot-ear left"></div>
-            <div class="robot-head">
-                <div class="robot-face">
-                    <div class="eyes left"></div>
-                    <div class="eyes right"></div>
-                    <div class="mouth"></div>
-                </div>
+            <span>60 minutes</span> -->
             </div>
-            <div class="robot-ear right"></div>
-            <div class="robot-body"></div>
+            <div class="bg-images">
+                <a onclick="changeBackgroundImage('../images/space.jpg');">Cosmos</a>
+                <a onclick="changeBackgroundImage('../images/tree.jpg');">Tree</a>
+                <a onclick="changeBackgroundImage('../images/beach.jpg');">Beach</a>
+                <a onclick="changeBackgroundImage('../images/owl.jpg');">Animal</a>
+            </div>
         </div>
-    </div>
-    <div class="timer">
-        <p class="countdown">1:00</p>
-    </div>
-    <div class="buttons">
-        <button class="btn button-one">20 minutes</button>
-        <button class="btn button-two">40 minutes</button>
-        <button class="btn button-three">60 minutes</button>
-        <ul class="nav">
-            <audio id="music" src="./audio/chill.mp3" class="my-audio" loop="loop" preload="auto"></audio>
-        </ul>
-    </div>
 
-    <!--   <div>
-        <input type="checkbox" id="toggle" class="toggle-checkbox" />
-        <label for="toggle" class="toggle-label">
-        <span class="toggle-label-background"></span>
-      </label>
-        <div class="background"></div>
-    </div> -->
+        <div class="cute-robot">
+            <div class="circle-bg">
+                <div class="robot-ear left"></div>
+                <div class="robot-head">
+                    <div class="robot-face">
+                        <div class="eyes left"></div>
+                        <div class="eyes right"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <div class="robot-ear right"></div>
+                <div class="robot-body"></div>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="timer">
+                <input type="text" class="countdown" name="timerDisplay" value="" />
+            </div>
+            <div class="buttons">
+                <input type="button" class="btn" name="startTime" value="1 minute" onClick="startTimer1()" />
+                <input type="button" class="btn" name="startTime" value="20 minutes" onClick="startTimer2()" />
+                <input type="button" class="btn" name="startTime" value="40 minutes" onClick="startTimer3()" />
+                <input type="button" class="btn" name="startTime" value="60 minutes" onClick="startTimer4()" />
+            </div>
+            <div class="clear">
+                <input type="button" class="cleartime" name="clearTime" value="clear time" onClick="stopTimer()" />
+                <input type="button" class="stop" name="stopAudio" value="stop music" />
+            </div>
+            <div class="stop"></div>
+        </form>
+        <audio id="music" src="./audio/chill.mp3" class="my-audio" loop="loop" preload="auto"></audio>
+    </div>
 </body>
-<script>
-    /*  var musicOne = $('#music')[0];
-                                $('.nav').mouseenter(function() {
-                                    musicOne.play();
-                                }); */
-</script>
 <script src="script.js"></script>
 
 </html>

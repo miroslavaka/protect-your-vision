@@ -1,22 +1,152 @@
-'use strict';
-
-let btnOne = document.querySelector('.button-one');
-let btnTwo = document.querySelector('.button-two');
-let btnThree = document.querySelector('.button-three');
 let myAudio = document.querySelector('.my-audio');
-let isPlaying = false;
+let running = false;
+let endTime = null;
+let timerID = null;
+let now;
 
+function startTimer1() {
+    running = true;
+    now = new Date();
+    console.log(now);
+    now = now.getTime();
+    console.log(now);
+    // change last multiple for the number of minutes
+    endTime = now + 1000 * 60 * 1;
+    console.log(endTime);
+    showCountDown1();
+}
+
+function showCountDown1() {
+    let now = new Date();
+    now = now.getTime();
+    if (endTime - now <= 0) {
+        stopTimer();
+        myAudio.play();
+    } else {
+        let delta = new Date(endTime - now);
+        let theMin = delta.getMinutes();
+        let theSec = delta.getSeconds();
+        let theTime = theMin;
+        theTime += (theSec < 10 ? ':0' : ':') + theSec;
+        document.forms[0].timerDisplay.value = theTime;
+        if (running) {
+            timerID = setTimeout('showCountDown1()', 1000);
+        }
+    }
+}
+
+//--------------------------------------------------------
+function startTimer2() {
+    running = true;
+    now = new Date();
+    console.log(now);
+    now = now.getTime();
+    console.log(now);
+    // change last multiple for the number of minutes
+    endTime = now + 1000 * 60 * 20;
+    console.log(endTime);
+    showCountDown2();
+}
+
+function showCountDown2() {
+    let now = new Date();
+    now = now.getTime();
+    if (endTime - now <= 0) {
+        stopTimer();
+        myAudio.play();
+    } else {
+        let delta = new Date(endTime - now);
+        let theMin = delta.getMinutes();
+        let theSec = delta.getSeconds();
+        let theTime = theMin;
+        theTime += (theSec < 10 ? ':0' : ':') + theSec;
+        document.forms[0].timerDisplay.value = theTime;
+        if (running) {
+            timerID = setTimeout('showCountDown2()', 1000);
+        }
+    }
+}
+//--------------------------------------------------------
+function startTimer3() {
+    running = true;
+    now = new Date();
+    console.log(now);
+    now = now.getTime();
+    console.log(now);
+    // change last multiple for the number of minutes
+    endTime = now + 1000 * 60 * 40;
+    console.log(endTime);
+    showCountDown2();
+}
+
+function showCountDown3() {
+    let now = new Date();
+    now = now.getTime();
+    if (endTime - now <= 0) {
+        stopTimer();
+        myAudio.play();
+    } else {
+        let delta = new Date(endTime - now);
+        let theMin = delta.getMinutes();
+        let theSec = delta.getSeconds();
+        let theTime = theMin;
+        theTime += (theSec < 10 ? ':0' : ':') + theSec;
+        document.forms[0].timerDisplay.value = theTime;
+        if (running) {
+            timerID = setTimeout('showCountDown2()', 1000);
+        }
+    }
+}
+//--------------------------------------------------------
+function startTimer4() {
+    running = true;
+    now = new Date();
+    console.log(now);
+    now = now.getTime();
+    console.log(now);
+    // change last multiple for the number of minutes
+    endTime = now + 1000 * 60 * 60;
+    console.log(endTime);
+    showCountDown2();
+}
+
+function showCountDown4() {
+    let now = new Date();
+    now = now.getTime();
+    if (endTime - now <= 0) {
+        stopTimer();
+        myAudio.play();
+    } else {
+        let delta = new Date(endTime - now);
+        let theMin = delta.getMinutes();
+        let theSec = delta.getSeconds();
+        let theTime = theMin;
+        theTime += (theSec < 10 ? ':0' : ':') + theSec;
+        document.forms[0].timerDisplay.value = theTime;
+        if (running) {
+            timerID = setTimeout('showCountDown2()', 1000);
+        }
+    }
+}
+//--------------------------------------------------------
+
+function stopTimer() {
+    clearTimeout(timerID);
+    running = false;
+    document.forms[0].timerDisplay.value = '0:00';
+}
+
+//--------------------------------------------------------
 function changeBackgroundImage(bgImage) {
     document.body.style.backgroundImage = 'url(' + bgImage + ')';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundSize = 'cover';
 }
-
-//DOMContentLoaded event is triggered when your whole HTML page has been loaded
-//document.addEventListener('DOMContentLoaded', changeBackgroundImage());
-
-//if you want to wait until page is fully loaded, you can listen for load
 document.addEventListener('DOMContentLoaded', changeBackgroundImage());
+
+//--------------------------------------------------------
+let isPlaying = false;
+let stop = document.querySelector('.stop');
 
 myAudio.onplaying = function() {
     isPlaying = true;
@@ -24,70 +154,8 @@ myAudio.onplaying = function() {
 myAudio.onpause = function() {
     isPlaying = false;
 };
-
-//play after 20 minutes
-btnOne.addEventListener('click', togglePlay);
-
-function playMusicBtnOne() {
-    setTimeout(function() {
-        myAudio.play();
-    }, 1200000);
-}
+stop.addEventListener('click', togglePlay);
 
 function togglePlay() {
-    isPlaying === true ? myAudio.pause() : playMusicBtnOne();
-}
-
-//play after 40 minutes
-btnTwo.addEventListener('click', togglePlay);
-
-function playMusicBtnTwo() {
-    setTimeout(function() {
-        myAudio.play();
-    }, 2400000);
-}
-
-function togglePlay() {
-    isPlaying === true ? myAudio.pause() : playMusicBtnTwo();
-}
-
-//play after 60 minutes
-btnThree.addEventListener('click', togglePlay);
-
-function playMusicBtnThree() {
-    setTimeout(function() {
-        myAudio.play();
-    }, 3600000);
-}
-
-function togglePlay() {
-    isPlaying === true ? myAudio.pause() : playMusicBtnThree();
-}
-
-//countdown
-const startingMinutes = 40;
-let time = startingMinutes * 60;
-const countdownEl = document.querySelector('.countdown');
-
-let runTheClock = setInterval(updateCountdown, 1000);
-
-function updateCountdown() {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    countdownEl.innerHTML = `${minutes}:${seconds}`;
-    /*  if (countdownEl.innerHTML == '0:00') {
-                countdownEl.innerHTML === '0:00';
-                myAudio.play();
-            } */
-    if (--time < 0) {
-        clearInterval(runTheClock);
-        myAudio.play();
-    }
-
-    /* if (minutes === 0) {
-                  myAudio.play();
-              } */
+    isPlaying === true ? myAudio.pause() : myAudio.play();
 }
